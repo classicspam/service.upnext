@@ -228,9 +228,7 @@ def jsonrpc(batch=None, **kwargs):
         kwargs['jsonrpc'] = '2.0'
 
     request = json.dumps(batch or kwargs, default=tuple)
-    log(request)
     response = xbmc.executeJSONRPC(request)
-    log(json.loads(response))
     return json.loads(response) if do_response else None
 
 
