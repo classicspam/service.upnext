@@ -1076,6 +1076,10 @@ def get_upnext_episodes_from_library(limit=25,  # pylint: disable=too-many-local
             FILTER_AIRED['value'] = aired.split()[0]
             FILTER_NEXT_AIRED['value'] = aired
 
+            log('Episode: {0}'.format(episode.str()))
+            log('Filter: {0}'.format(filters[2]))
+            log('TV Show ID: {0}'.format(tvshowid))
+
             upnext_episode, _ = get_videos_from_library(db_type='episodes',
                                                         limit=1,
                                                         sort=sort,
@@ -1084,6 +1088,8 @@ def get_upnext_episodes_from_library(limit=25,  # pylint: disable=too-many-local
                                                                 tvshowid})
 
             log('Got Here 3')
+            log('Upnext Episode: {0}'.format(upnext_episode.str()))
+            log('Got Here 3a')
             if not upnext_episode:
                 log('Got Here 4')
                 tvshow_index.add(tvshowid)
