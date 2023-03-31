@@ -1060,7 +1060,6 @@ def get_upnext_episodes_from_library(limit=25,  # pylint: disable=too-many-local
     upnext_episodes = []
     tvshow_index = set()
     for episode in episodes:
-        log('Episode found: {1}'.format(episode))
         tvshowid = episode['tvshowid']
         if tvshowid in tvshow_index:
             continue

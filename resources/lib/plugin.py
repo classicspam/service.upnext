@@ -145,6 +145,7 @@ def generate_similar_movies_list(addon_handle, addon_id, **kwargs):  # pylint: d
 
 def generate_next_episodes_list(addon_handle, addon_id, **kwargs):  # pylint: disable=unused-argument
     log('Got Here 56')
+    log('Got Here 60')
     episodes = api.get_upnext_episodes_from_library(
         limit=SETTINGS.widget_list_limit,
         next_season=SETTINGS.next_season,
