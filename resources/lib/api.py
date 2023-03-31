@@ -1074,7 +1074,7 @@ def get_upnext_episodes_from_library(limit=25,  # pylint: disable=too-many-local
             FILTER_NEXT_EPISODE['value'] = str(episode['episode'])
             aired = utils.iso_datetime(episode['firstaired'])
             FILTER_AIRED['value'] = aired.split()[0]
-            FILTER_NEXT_AIRED['value'] = aired.split()[0]
+            FILTER_NEXT_AIRED['value'] = aired.replace('00:00:00', '23:59:59')
 
             log('Episode: {0}'.format(str(episode)))
             log('Filter: {0}'.format(filters[2]))
