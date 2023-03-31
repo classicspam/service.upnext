@@ -800,6 +800,7 @@ def get_next_episode_from_library(episode=constants.UNDEFINED,
 
     filters = {'and': filters}
 
+    log('Filters used:' + filters)
     result, _ = get_videos_from_library(db_type='episodes',
                                         limit=1,
                                         sort=sort,
@@ -1059,6 +1060,7 @@ def get_upnext_episodes_from_library(limit=25,  # pylint: disable=too-many-local
     upnext_episodes = []
     tvshow_index = set()
     for episode in episodes:
+        log('Episode found: {1}'.format(episode))
         tvshowid = episode['tvshowid']
         if tvshowid in tvshow_index:
             continue
