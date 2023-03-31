@@ -22,6 +22,7 @@ def log(msg, level=utils.LOGDEBUG):
 
 
 def generate_library_plugin_data(current_item, addon_id, state=None):
+    log('Got Here 58')
     if state:
         next_item = state.get_next()
     else:
@@ -47,6 +48,7 @@ def generate_library_plugin_data(current_item, addon_id, state=None):
 
 
 def generate_listing(addon_handle, addon_id, items):  # pylint: disable=unused-argument
+    log('Got Here 57')
     listing = []
     for item in items:
         content = PLUGIN_CONTENT.get(item)
@@ -142,6 +144,7 @@ def generate_similar_movies_list(addon_handle, addon_id, **kwargs):  # pylint: d
 
 
 def generate_next_episodes_list(addon_handle, addon_id, **kwargs):  # pylint: disable=unused-argument
+    log('Got Here 56')
     episodes = api.get_upnext_episodes_from_library(
         limit=SETTINGS.widget_list_limit,
         next_season=SETTINGS.next_season,
@@ -218,6 +221,7 @@ def generate_similar_tvshows_list(addon_handle, addon_id, **kwargs):  # pylint: 
 
 
 def generate_next_media_list(addon_handle, addon_id, **kwargs):  # pylint: disable=unused-argument
+    log('Got Here 55')
     episodes = api.get_upnext_episodes_from_library(
         limit=SETTINGS.widget_list_limit,
         next_season=SETTINGS.next_season,
