@@ -1067,8 +1067,10 @@ def get_upnext_episodes_from_library(limit=25,  # pylint: disable=too-many-local
 
         resume = episode['resume']
         if 0 < resume['position'] < 0.9 * resume['total']:
+            log('Got Here 1')
             upnext_episode = episode
         else:
+            log('Got Here 2')
             FILTER_THIS_SEASON['value'] = str(episode['season'])
             FILTER_NEXT_EPISODE['value'] = str(episode['episode'])
             aired = utils.iso_datetime(episode['firstaired'])
@@ -1082,7 +1084,9 @@ def get_upnext_episodes_from_library(limit=25,  # pylint: disable=too-many-local
                                                         params={'tvshowid':
                                                                 tvshowid})
 
+            log('Got Here 3')
             if not upnext_episode:
+                log('Got Here 4')
                 tvshow_index.add(tvshowid)
                 continue
 
